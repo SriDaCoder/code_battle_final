@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkout</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function checkout() {
+                alert('Total Price: ' + total + ' AED');
+                alert('Thank you for shopping with us!');
+                total = 0;
+                document.getElementById('totalPrice').innerText = 'Total Price: 0 AED';
+                document.getElementById('itemsList').innerHTML = '';
+                document.getElementById('vatAmount').innerText = '';
+                document.getElementById('discount').innerText = '';
+                document.getElementById('discountedAmount').innerText = '';
+                document.getElementById('totalWithVAT').innerText = '';
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Carrefour</h1>
+            <hr>
+            <hr>
+        </div>
+        <div id="otherheader">
+            <h2>Checkout</h2>
+            <hr>
+            <hr>
+        </div>
+        
+        <table id="checkoutTable" border="1">
+            <tr>
+                <th>Item</th>
+                <th>Price (in UAE Dirham)</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Shirt</td>
+                <td>AED 10</td>
+                <td><button class="add-to-cart">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td>Belt</td>
+                <td>AED 5</td>
+                <td><button class="add-to-cart">Add to cart</button></td>
+            </tr>
+        </table>
+        
+        <script src="script.js"></script>
+        
+        <hr>
+        <p>Item:</p>
+
+        <input type="text" id="itemName" placeholder="Enter item name">
+        <button onclick="addItem()">Add Item</button>
+        <div style="padding: 0px;">
+            <div id="itemsList" style="padding: 0px;"></div>
+            <p id="totalPrice" style="padding: 0px;">Total price: 0 AED</p>
+            <p id="vatAmount" style="padding: 0px;"></p>
+            <p id="discount" style="padding: 0px;"></p>
+            <p id="discountedAmount" style="padding: 0px;"></p>
+            <p id="totalWithVAT" style="padding: 0px;"></p>
+        </div>
+        <button onclick="checkout()">Checkout</button>
+        <hr>
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button onclick="window.location.href='inventory.html'">Back to shopping</button>
+    </body>
+</html>
